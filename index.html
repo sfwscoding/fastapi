@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ระบบเช็คชื่อ</title>
+    <title>ระบบเช็คชื่อ (บันทึกข้อมูล)</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -11,7 +11,7 @@
 
     <div class="attendance-container">
 
-        <div class="student-card">
+        <div class="student-card" data-student-id="s1">
             <div class="student-info">
                 <img src="avatar1.png" alt="Avatar" class="avatar">
                 <div class="student-details">
@@ -20,14 +20,14 @@
                 </div>
             </div>
             <div class="button-group">
-                <button class="status-btn present active">มา</button>
-                <button class="status-btn late">ลา</button>
-                <button class="status-btn sick">ป่วย</button>
-                <button class="status-btn absent">ขาด</button>
+                <button class="status-btn present" data-status="present">มาเรียน</button>
+                <button class="status-btn late" data-status="late">มาสาย</button>
+                <button class="status-btn sick" data-status="sick">ป่วย</button>
+                <button class="status-btn absent" data-status="absent">ขาด</button>
             </div>
         </div>
 
-        <div class="student-card">
+        <div class="student-card" data-student-id="s2">
             <div class="student-info">
                 <img src="avatar2.png" alt="Avatar" class="avatar">
                 <div class="student-details">
@@ -36,14 +36,14 @@
                 </div>
             </div>
             <div class="button-group">
-                <button class="status-btn present active">มา</button>
-                <button class="status-btn late">ลา</button>
-                <button class="status-btn sick">ป่วย</button>
-                <button class="status-btn absent">ขาด</button>
+                <button class="status-btn present" data-status="present">มาเรียน</button>
+                <button class="status-btn late" data-status="late">มาสาย</button>
+                <button class="status-btn sick" data-status="sick">ป่วย</button>
+                <button class="status-btn absent" data-status="absent">ขาด</button>
             </div>
         </div>
 
-        <div class="student-card">
+        <div class="student-card" data-student-id="s3">
             <div class="student-info">
                 <img src="avatar3.png" alt="Avatar" class="avatar">
                 <div class="student-details">
@@ -52,13 +52,17 @@
                 </div>
             </div>
             <div class="button-group">
-                <button class="status-btn present active">มา</button>
-                <button class="status-btn late">ลา</button>
-                <button class="status-btn sick">ป่วย</button>
-                <button class="status-btn absent">ขาด</button>
+                <button class="status-btn present" data-status="present">มาเรียน</button>
+                <button class="status-btn late" data-status="late">มาสาย</button>
+                <button class="status-btn sick" data-status="sick">ป่วย</button>
+                <button class="status-btn absent" data-status="absent">ขาด</button>
             </div>
         </div>
 
+    </div>
+
+    <div class="export-container">
+        <button id="export-button">แสดงข้อมูลที่เก็บไว้ (ใน Console)</button>
     </div>
 
     <script src="script.js"></script>
