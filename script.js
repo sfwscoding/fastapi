@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', () => {
         exportBtn.addEventListener('click', () => {
             console.log("--- ข้อมูลการเช็คชื่อทั้งหมดที่เก็บไว้ ---");
             console.log(attendanceData);
-            alert("ข้อมูลทั้งหมดถูกแสดงใน Console แล้ว (กด F12 เพื่อดู)");
+            //  alert("ข้อมูลทั้งหมดถูกแสดงใน Console แล้ว (กด F12 เพื่อดู)");
         });
     }
 
