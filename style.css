@@ -1,0 +1,101 @@
+/* ตั้งค่าพื้นฐานและฟอนต์ */
+body {
+    font-family: 'Sarabun', sans-serif;
+    background-color: #f8f9fa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.attendance-container {
+    width: 100%;
+    max-width: 700px;
+}
+
+/* การ์ดของนักเรียนแต่ละคน */
+.student-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+/* ส่วนข้อมูลนักเรียน (รูปและชื่อ) */
+.student-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    width: 60px; /* ขนาดที่ปรับจากครั้งที่แล้ว */
+    height: 60px;
+    border-radius: 50%;
+    margin-right: 20px; 
+    object-fit: cover;
+}
+
+.student-name {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.student-nickname {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+/* แถบกลุ่มปุ่ม */
+.button-group {
+    display: flex;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 5px;
+    justify-content: space-between;
+}
+
+/* ปุ่มสถานะ (สไตล์เริ่มต้น - inactive) */
+.status-btn {
+    flex: 1;
+    border: none;
+    background-color: transparent;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #888;
+    transition: all 0.2s ease;
+    margin: 0 3px;
+}
+
+/* * -----------------------------------
+ * ส่วนที่แก้ไขสี (Active States)
+ * -----------------------------------
+*/
+
+/* 1. มาเรียน (สีเขียว) */
+.status-btn.present.active {
+    background-color: #28a745;
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(40, 167, 69, 0.4);
+}
+
+/* 2. ที่เหลือ (สีแดง) */
+.status-btn.late.active,
+.status-btn.sick.active,
+.status-btn.absent.active {
+    background-color: #dc3545; /* สีแดง */
+    color: #ffffff;
+    box-shadow: 0 2px 4px rgba(220, 53, 69, 0.4);
+}
+
+
+/* สไตล์เมื่อเอาเมาส์ไปชี้ (Hover) - เฉพาะปุ่มที่ยังไม่ active */
+.status-btn:not(.active):hover {
+    background-color: #e2e2e2;
+    color: #555;
+}
