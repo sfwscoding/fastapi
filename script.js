@@ -45,8 +45,9 @@ async function apiFetch(path, opts = {}) {
 
 // --- 💡 (สำหรับ index.html) - เขียนใหม่ ---
 // --- (นี่คือฟังก์ชัน refreshUsers จากข้อ 10) ---
+a// --- 💡 (สำหรับ index.html) - อัปเดตฟังก์ชันนี้ ---
 async function refreshUsers() {
-  if (!attendanceList) return; 
+  if (!attendanceList) return; // ออกถ้าไม่อยู่หน้า list
   attendanceList.textContent = "กำลังโหลด...";
   const r = await apiFetch('/api/users', { method: 'GET' });
 
@@ -61,15 +62,17 @@ async function refreshUsers() {
     return;
   }
 
+  // สร้าง Card ตามดีไซน์ใหม่
   users.forEach(u => {
     // 💡 สร้าง URL รูป Avatar อัตโนมัติ (ขนาด 60px)
     const nameParam = encodeURIComponent(u.name);
     // (ใช้สีเขียวเดียวกับธีมเป็นพื้นหลัง)
     const avatarUrl = `https://ui-avatars.com/api/?name=${nameParam}&background=00A884&color=fff&size=60`;
     
+    // ใช้ role หรือ email ถ้ามี, เป็นชื่อเล่น
     const nickname = u.role || u.email; 
 
-    // 💡 เราใช้ <img class="avatar"> ตรงนี้
+    // 💡 เปลี่ยนจาก <div class="avatar"> เป็น <img class="avatar">
     const cardHTML = `
       <div class="student-card" data-user-id="${u.id}">
         <div class="student-info">
