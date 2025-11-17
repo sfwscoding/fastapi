@@ -1,16 +1,66 @@
-/* ตั้งค่าพื้นฐานและฟอนต์ */
-body {
-    font-family: 'Sarabun', sans-serif;
-    background-color: #f8f9fa;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
+/* ไม่ต้อง @import Sarabun ที่นี่ เพราะอยู่ใน HTML แล้ว */
+
+:root {
+  --bg: #f8f9fa; /* 💡 ปรับพื้นหลังเป็นสีเทาอ่อน (ตามโค้ดใหม่) */
+  --card: #FFFFFF; 
+  --accent: #00A884; 
+  --accent-dark: #008069;
+  --text: #111B21; 
+  --muted: #667781; 
+  --danger: #D9534F;
+  --late: #F7B84B; 
+  --sick: #3498DB; 
+  --radius: 12px; /* 💡 ปรับตามดีไซน์ใหม่ */
+  font-family: 'Sarabun', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg); /* 💡 ใช้สีพื้นหลังใหม่ */
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-bottom: 80px; 
+}
+
+/* * 💡 HEADER, CONTAINER, BOTTOM-NAV (ของเดิม)
+ * เรายังเก็บไว้เพื่อหน้าอื่นๆ (สร้าง, ค้นหา, สถานะ)
+*/
+header {
+  background: var(--accent-dark); color: white; padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); position: sticky; top: 0; z-index: 10;
+}
+header h1 { margin: 0; font-size: 1.25rem; }
+.subtitle { margin: 4px 0 0 0; color: #E0F2F1; font-weight: 300; font-size: 0.9rem; }
+.container { max-width: 600px; margin: 0 auto; padding: 0; }
+main { padding: 16px; }
+.bottom-nav {
+  display: flex; justify-content: space-around; align-items: stretch;
+  background: var(--card); border-top: 1px solid #E0E0E0;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05); position: fixed;
+  bottom: 0; left: 0; right: 0; z-index: 20; max-width: 600px;
+  margin: 0 auto;
+}
+.nav-item {
+  flex: 1; display: flex; flex-direction: column; align-items: center;
+  justify-content: center; padding: 8px 4px; text-decoration: none;
+  color: var(--muted); gap: 4px;
+}
+.nav-item svg { width: 24px; height: 24px; stroke: var(--muted); stroke-width: 2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+.nav-item span { font-size: 0.75rem; font-weight: 500; }
+.nav-item.active { color: var(--accent); }
+.nav-item.active svg { stroke: var(--accent); }
+
+
+/* * 💡 CSS ใหม่สำหรับหน้าเช็คชื่อ (ตามที่ครูส่งมา)
+*/
 .attendance-container {
     width: 100%;
-    max-width: 700px;
+    /* * เราใช้ max-width จาก .container (600px) อยู่แล้ว 
+     * แต่ถ้าครูอยากให้หน้านี้กว้าง 700px ก็แก้ .container เป็น 700px ได้ครับ
+     */
 }
 
 /* การ์ดของนักเรียนแต่ละคน */
@@ -35,6 +85,12 @@ body {
     border-radius: 50%;
     margin-right: 20px; 
     object-fit: cover;
+    /* 💡 เพิ่มสีพื้นหลังเผื่อรูปโหลดไม่ขึ้น */
+    background-color: #e0e0e0; 
+}
+
+.student-details { /* 💡 เพิ่มจากโค้ดเดิม เพื่อให้ .student-name อยู่ใน div */
+    flex-grow: 1;
 }
 
 .student-name {
@@ -70,12 +126,8 @@ body {
     color: #888;
     transition: all 0.2s ease;
     margin: 0 3px;
+    font-family: 'Sarabun', sans-serif; /* 💡 đảm bảo font */
 }
-
-/* * -----------------------------------
- * ส่วนที่แก้ไขสี (Active States)
- * -----------------------------------
-*/
 
 /* 1. มาเรียน (สีเขียว) */
 .status-btn.present.active {
@@ -93,9 +145,18 @@ body {
     box-shadow: 0 2px 4px rgba(220, 53, 69, 0.4);
 }
 
-
 /* สไตล์เมื่อเอาเมาส์ไปชี้ (Hover) - เฉพาะปุ่มที่ยังไม่ active */
 .status-btn:not(.active):hover {
     background-color: #e2e2e2;
     color: #555;
 }
+
+/* * 💡 CSS ของหน้าอื่นๆ (ยังคงเก็บไว้)
+*/
+.list-area { margin-top: 12px; min-height: 60px; display: flex; flex-direction: column; gap: 12px; }
+.panel {
+  background: var(--card); border-radius: 8px; padding: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08); margin-bottom: 16px; border: 1px solid #E0E0E0;
+}
+.panel h2 { margin-top: 0; color: var(--accent-dark); border-bottom: 1px solid #EEE; padding-bottom: 8px; }
+.panel h3 { margin-top

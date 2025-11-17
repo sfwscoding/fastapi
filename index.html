@@ -1,56 +1,48 @@
-<link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale-1" />
+  <meta name="theme-color" content="#008069">
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet">
+  <title>ระบบเช็คชื่อ</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  
+  <div class="container">
+    <header>
+      <h1>ระบบเช็คชื่อ</h1>
+      <p class="subtitle">เลือกสถานะการมาเรียนของนักเรียน</p>
+    </header>
 
-    <div class="attendance-container">
-
-        <div class="student-card">
-            <div class="student-info">
-                <img src="avatar1.png" alt="Avatar" class="avatar">
-                <div class="student-details">
-                    <div class="student-name">อลิสา เชน</div>
-                    <div class="student-nickname">ลิสา</div>
-                </div>
-            </div>
-            <div class="button-group">
-                <button class="status-btn present active">มาเรียน</button>
-                <button class="status-btn late">มาสาย</button>
-                <button class="status-btn sick">ป่วย</button>
-                <button class="status-btn absent">ขาด</button>
-            </div>
+    <main>
+      <div id="attendance-list" class="list-area">
         </div>
 
-        <div class="student-card">
-            <div class="student-info">
-                <img src="avatar2.png" alt="Avatar" class="avatar">
-                <div class="student-details">
-                    <div class="student-name">เบนจมินทร์ คาร์เตอร์</div>
-                    <div class="student-nickname">เบน</div>
-                </div>
-            </div>
-            <div class="button-group">
-                <button class="status-btn present active">มาเรียน</button>
-                <button class="status-btn late">มาสาย</button>
-                <button class="status-btn sick">ป่วย</button>
-                <button class="status-btn absent">ขาด</button>
-            </div>
-        </div>
+      <footer>
+        <small>API host: <code id="api-host">...</code></small>
+      </footer>
+    </main>
 
-        <div class="student-card">
-            <div class="student-info">
-                <img src="avatar3.png" alt="Avatar" class="avatar">
-                <div class="student-details">
-                    <div class="student-name">โซฟิตา โรดริเกซ</div>
-                    <div class="student-nickname">โซฟี</div>
-                </div>
-            </div>
-            <div class="button-group">
-                <button class="status-btn present active">มาเรียน</button>
-                <button class="status-btn late">มาสาย</button>
-                <button class="status-btn sick">ป่วย</button>
-                <button class="status-btn absent">ขาด</button>
-            </div>
-        </div>
-
-    </div>
-
-    <script src="script.js"></script>
+    <nav class="bottom-nav">
+      <a href="index.html" class="nav-item active">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <span>เช็คชื่อ</span> </a>
+      <a href="create.html" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="16"></line><line x1="8" y1="12" x2="16" y2="12"></line></svg>
+        <span>สร้าง</span>
+      </a>
+      <a href="search.html" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>ค้นหา/ลบ</span>
+      </a>
+      <a href="health.html" class="nav-item">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"></path></svg>
+        <span>สถานะ</span>
+      </a>
+    </nav>
+  </div>
+  <script src="scripts.js"></script>
+</body>
+</html>
